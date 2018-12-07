@@ -6,28 +6,19 @@ const ayarlar = require('../ayarlar.json');
 var prefix = ayarlar.prefix;
 
 module.exports = client => {
-  console.log(`[-] BOT: Komutları yükledim!`);
-  console.log(`[-] BOT: ${client.user.username} ismi ile giriş yaptım!`);
-  console.log(`[-] BOT: Oyun ismimi ayarladım!`);
-  console.log(`[-] BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.users.size + ` kullanıcıya hizmet veriyorum!`);
-
-    var Games = [
-     
-	  `| ${prefix}temizle | ${prefix}8ball |`,
-	 
-      `| ${prefix}yardım | ${prefix}davet |`,
-      
-      `| ${client.guilds.size} Sunucu | ${client.channels.size} Kanal | ${client.users.size} Kullanıcı |`,
-      
-      `| Prefixim: ${prefix} |`
-    
+  console.log([${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Aktif, Komutlar yüklendi!);
+  console.log([${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: ${client.user.username} ismi ile giriş yapıldı!);
+  client.user.setStatus("online");
+   var oyun = [
+        ":muscle: 7/24 Aktif!",
+     ":bulb: +davet | Botumuzu ekleyin",
+        "+yardım :fire: + +davet :fire:"
     ];
 
     setInterval(function() {
 
-        var random = Math.floor(Math.random()*(Games.length-0+1)+0);
+        var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
 
-        client.user.setGame(Games[random], "https://twitch.tv/lazusakaan123");
+        client.user.setGame(oyun[random], "https://www.twitch.tv/lazusakaa1n9321;
         }, 2 * 2500);
-
-};
+}
